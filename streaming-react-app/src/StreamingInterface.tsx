@@ -854,12 +854,12 @@ export default function StreamingInterface() {
                       </Grid>
 
                       <Grid item xs={12} sm={8}>
-                        {/* <Stack
+                        <Stack
                           direction="column"
                           spacing={1}
                           alignItems="flex-start"
                           sx={{flexGrow: 1}}>
-                          {currentAgent?.dynamicParams?.includes(
+                          {/* {currentAgent?.dynamicParams?.includes(
                             'expressive',
                           ) && (
                             <FormControlLabel
