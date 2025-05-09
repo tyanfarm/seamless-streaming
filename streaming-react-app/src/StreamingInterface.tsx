@@ -750,30 +750,13 @@ export default function StreamingInterface() {
 
               <div>
                 <Typography variant="h1" sx={{color: '#65676B'}}>
-                  Seamless Translation
+                  VoiceStream Chat4 Translator
                 </Typography>
               </div>
             </div>
             <div className="header-container-sra">
               <div>
                 <Typography variant="body2" sx={{color: '#65676B'}}>
-                  Welcome! This space is limited to one speaker at a time. 
-                  If using the live HF space, sharing room code to listeners on another 
-                  IP address may not work because it's running on different replicas. 
-                  Use headphones if you are both speaker and listener to prevent feedback.
-                  <br/>
-                  If max speakers reached, please duplicate the space <a target="_blank" rel="noopener noreferrer" href="https://huggingface.co/spaces/facebook/seamless-streaming?duplicate=true">here</a>. 
-                  In your duplicated space, join a room as speaker or listener (or both), 
-                  and share the room code to invite listeners.
-                  <br/>
-                  Check out the seamless_communication <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebookresearch/seamless_communication/tree/main">README</a> for more information.
-                  <br/>
-                  SeamlessStreaming model is a research model and is not released
-                  for production deployment. It is important to use a microphone with 
-                  noise cancellation (for e.g. a smartphone), otherwise you may see model hallucination on noises. 
-                  It works best if you pause every couple of sentences, or you may wish adjust the VAD threshold
-                  in the model config. The real-time performance will degrade
-                  if you try streaming multiple speakers at the same time.
                 </Typography>
               </div>
             </div>
@@ -808,47 +791,6 @@ export default function StreamingInterface() {
               {isSpeaker && (
                 <>
                   <Divider />
-
-                  <Stack spacing="12px" direction="column">
-                    <FormLabel id="output-modes-radio-group-label">
-                      Model
-                    </FormLabel>
-                    <FormControl
-                      disabled={
-                        streamFixedConfigOptionsDisabled ||
-                        agentsCapabilities.length === 0
-                      }
-                      fullWidth
-                      sx={{minWidth: '14em'}}>
-                      <InputLabel id="model-selector-input-label">
-                        Model
-                      </InputLabel>
-                      <Select
-                        labelId="model-selector-input-label"
-                        label="Model"
-                        onChange={(e: SelectChangeEvent) => {
-                          const newAgent =
-                            agentsCapabilities.find(
-                              (agent) => e.target.value === agent.name,
-                            ) ?? null;
-                          if (newAgent == null) {
-                            console.error(
-                              'Unable to find agent with name',
-                              e.target.value,
-                            );
-                          }
-                          setAgentAndUpdateParams(newAgent);
-                        }}
-                        value={model ?? ''}>
-                        {agentsCapabilities.map((agent) => (
-                          <MenuItem value={agent.name} key={agent.name}>
-                            {agent.name}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
-
-                  </Stack>
 
                   <Stack spacing={0.5}>
                     <FormLabel id="output-modes-radio-group-label">
@@ -912,7 +854,7 @@ export default function StreamingInterface() {
                       </Grid>
 
                       <Grid item xs={12} sm={8}>
-                        <Stack
+                        {/* <Stack
                           direction="column"
                           spacing={1}
                           alignItems="flex-start"
@@ -937,7 +879,7 @@ export default function StreamingInterface() {
                               }
                               label="Expressive"
                             />
-                          )}
+                          )} */}
 
                           {isListener && (
                             <Box
@@ -1022,7 +964,7 @@ export default function StreamingInterface() {
                           }
                           label="Echo Cancellation (not recommended)"
                         />
-                        <FormControlLabel
+                        {/* <FormControlLabel
                           control={
                             <Checkbox
                               checked={serverDebugFlag}
@@ -1032,7 +974,7 @@ export default function StreamingInterface() {
                             />
                           }
                           label="Enable Server Debugging"
-                        />
+                        /> */}
                       </FormControl>
                     </Box>
                   </Stack>

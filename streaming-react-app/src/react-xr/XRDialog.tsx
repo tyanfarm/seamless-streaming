@@ -64,7 +64,7 @@ export default function XRDialog(props: XRConfigProps) {
 
   return (
     <>
-      <Button variant="contained" onClick={() => setIsDialogOpen(true)}>
+      {/* <Button variant="contained" onClick={() => setIsDialogOpen(true)}>
         Enter AR Experience
       </Button>
       {isDialogOpen && (
@@ -85,7 +85,7 @@ export default function XRDialog(props: XRConfigProps) {
           </IconButton>
           <XRContent {...props} />
         </Dialog>
-      )}
+      )} */}
     </>
   );
 }
