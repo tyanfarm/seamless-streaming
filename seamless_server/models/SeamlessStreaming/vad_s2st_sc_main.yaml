@@ -15,18 +15,18 @@ sentencepiece_model: spm_256k_nllb100.model
 
 task: s2st
 tgt_lang: "eng"
-min_unit_chunk_size: 80   # Giảm kích thước đoạn tối thiểu
-decision_threshold: 0.9   # Giảm ngưỡng quyết định
+min_unit_chunk_size: 100   # kích thước đoạn tối thiểu
+decision_threshold: 0.9   # ngưỡng quyết định
 no_early_stop: True
 block_ngrams: True
 vocoder_name: vocoder_v2
 wav2vec_yaml: wav2vec.yaml
-min_starting_wait_w2vbert: 64   # Giảm thời gian chờ tối thiểu
+min_starting_wait_w2vbert: 192   # Giảm thời gian chờ tối thiểu
 
 config_yaml: cfg_fbank_u2t.yaml
 upstream_idx: 1
 detokenize_only: True
 device: cuda:0
 max_len_a: 0
-# max_len_b: 1000
-max_len_b: 1500     # Giảm giới hạn độ dài tối đa
+max_len_b: 1000
+# max_len_b: 1500     # Giảm giới hạn độ dài tối đa
