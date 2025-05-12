@@ -15,9 +15,9 @@ sentencepiece_model: spm_256k_nllb100.model
 
 task: s2st
 tgt_lang: "eng"
-min_unit_chunk_size: 20   # Giảm kích thước đoạn tối thiểu
-decision_threshold: 0.5   # Giảm ngưỡng quyết định
-no_early_stop: False
+min_unit_chunk_size: 80   # Giảm kích thước đoạn tối thiểu
+decision_threshold: 0.9   # Giảm ngưỡng quyết định
+no_early_stop: True
 block_ngrams: True
 vocoder_name: vocoder_v2
 wav2vec_yaml: wav2vec.yaml
@@ -29,4 +29,4 @@ detokenize_only: True
 device: cuda:0
 max_len_a: 0
 # max_len_b: 1000
-max_len_b: 200     # Giảm giới hạn độ dài tối đa
+max_len_b: 1500     # Giảm giới hạn độ dài tối đa
