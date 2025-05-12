@@ -15,8 +15,8 @@ sentencepiece_model: spm_256k_nllb100.model
 
 task: s2st
 tgt_lang: "eng"
-min_unit_chunk_size: 100   # kích thước đoạn tối thiểu
-decision_threshold: 0.9   # ngưỡng quyết định
+min_unit_chunk_size: 50   # kích thước đoạn tối thiểu
+decision_threshold: 0.7   # ngưỡng quyết định
 no_early_stop: True
 block_ngrams: True
 vocoder_name: vocoder_v2
